@@ -14,7 +14,7 @@ const App = () => {
         <Landing user={user} setUser={setUser}/>
       </Route>
       <Route path='/home'>
-        <Home />
+        <Home user={user}/>
       </Route>
     </AppContainer>
   );
