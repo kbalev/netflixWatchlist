@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import styled from "styled-components";
 import { Landing } from "./pages/landing";
 import { Home } from "./pages/home";
+import { Watchlist } from "./pages/watchlist";
 
 const App = () => {
   const [user, setUser] = useState();
@@ -15,6 +16,9 @@ const App = () => {
       </Route>
       <Route path='/home'>
         <Home user={user}/>
+      </Route>
+      <Route path='/watchlist'>
+        <Watchlist user={user}/>
       </Route>
     </AppContainer>
   );
