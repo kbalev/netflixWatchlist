@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PageContainer} from '../../styledComponents';
+import { addMovie } from '../../utils';
 
 export const Home = (user) => {
         const [dataIMDB, setDataIMDB] = useState([])
@@ -46,7 +47,7 @@ export const Home = (user) => {
                         )}
                         <h3>{dataIMDB.title}</h3>
                         <p>{dataIMDB.year}</p>
-                        {/* <button type='button' onClick={}>Add movie to watchlist</button> */}
+                        <button type='button' onClick={()=>{addMovie(user.user,dataIMDB.title, dataIMDB.year, dataIMDB.image)}}>Add {dataIMDB.title} to watchlist</button>
                     </div>
                 ))}
             </div>
