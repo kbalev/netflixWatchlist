@@ -22,7 +22,8 @@ const App = () => {
 
 const AppContainer = styled(Router)`
   width: 100vw;
-  heght: 100vh;
+  height: 100vh;
+  background-color: black;
 `;
 
 export default App;

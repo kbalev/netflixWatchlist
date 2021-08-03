@@ -1,0 +1,96 @@
+
+
+body{
+   background-image: url(/src/images/clapper.jpeg);
+   background-position: absolute ;
+   background-repeat: no-repeat;
+   object-fit: stretch;
+   overflow-x: hidden;
+   margin: 0%;
+
+}
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+.banner{
+    font-family: netflix;
+    font-size: 5em;
+    color: red;
+}
+.login-input{
+ min-width: 40%;
+ margin-left: 4vw;
+ margin-right: 4vw;
+ margin-bottom: 3vh;
+ min-height: 3vh;
+ border-radius: 6% 6% 6% 6%;
+ padding-left: 1vh;
+ padding-right: 1vh;
+}
+.btn{
+    max-width: 40%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-bottom: 3vh;
+    min-height: 3vh;
+    border-radius: 2vh 2vh 2vh 2vh;
+    min-height: 5vh;
+    background-color: rgba(15, 14, 14, 0.835);
+    color: red;
+    font-family: netflix;
+    font-size: large;
+}
+.btn-login{
+        max-width: 57%;
+        margin-left: 4vw;
+        margin-right: 4vw;
+        margin-bottom: 3vh;
+        min-height: 3vh;
+        border-radius: 2vh 2vh 2vh 2vh;
+        min-height: 5vh;
+        background-color: rgb(15, 14, 14);
+        color: red;
+        font-family: netflix;
+        font-size: large;
+}
+.login-holder{
+    max-width: 40vw;
+    max-height: 30vh;
+    background-color: rgba(255, 0, 0, 0.596);
+    justify-content: center;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 12.5vw;
+    padding-top: 5vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    animation: fadeIn;
+    animation-duration: 2s;
+    
+    }
+label{
+    font-family: netflix;
+    font-size: 1em;
+    color: white;
+    
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.397);
+    max-height: 100vh;
+}
+/* fonts */
+@font-face {
+    font-family: "netflix";
+    src: local("netflix"),
+      url("./fonts/netflix.otf") format("truetype");
+    font-weight: normal;
+  }
+@keyframes fadeIn{
+ 100%{transform: rotateX(360deg)};
+}

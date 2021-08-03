@@ -1,8 +1,10 @@
 import { PageContainer } from "../../styledComponents";
-import React, {useState} from 'react';
+import React, {Component, useState} from 'react';
 import styled from 'styled-components';
 import { fetchUsers } from "../../utils";
 import { Redirect } from "react-router-dom";
+import './landing.css';
+
 
 export const Landing = ({ user, setUser }) =>{
 const [newUser, setNewUser] = useState(false)
@@ -12,17 +14,30 @@ const [pass, setPass] = useState();
 
 
     return(
-        <PageContainer>
+        <div className="overlay">
+        <div className="wrapper">
+            <div className="banner">
+            <h1>Movie Watchlist</h1>
+            </div>
+            <div className="login-holder">
+        <PageContainer className="login"> 
             <LogForm onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
-                {newUser && <LogInput onChange={(e) => setEmail(e.target.value)} placeholder='Email'/>}
-                <LogInput onChange={(e) => setUsername(e.target.value)} placeholder='Username'/>
-                <LogInput onChange={(e) => setPass(e.target.value)} placeholder='Password'/>
-                <LogButton type='submit'>{newUser ? 'Sign Up' : 'Log In'}</LogButton>
+                {newUser && <LogInput className="login-input" onChange={(e) => setEmail(e.target.value)} placeholder='Email'/>}
+               
+                <label>username: 
+                <LogInput className="login-input" onChange={(e) => setUsername(e.target.value)} placeholder='Username'/>
+                </label>
+                <label>Password:
+                <LogInput className="login-input" onChange={(e) => setPass(e.target.value)} placeholder='Password'/>
+                </label>
+                <LogButton className="btn-login"type='submit'>{newUser ? 'Sign Up' : 'Log In'}</LogButton>
             </LogForm>
-            <LogButton type='button' onClick={()=> setNewUser(!newUser)}>{newUser ? 'Log In' : 'Sign Up'}</LogButton>
+            <LogButton className="btn" type='button' onClick={()=> setNewUser(!newUser)}>{newUser ? 'Log In' : 'Sign Up'}</LogButton>
             {user && <Redirect to='/home'/>}
         </PageContainer>
-
+        </div>
+        </div>
+</div>
     )
 }
 
