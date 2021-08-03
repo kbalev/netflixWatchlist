@@ -37,6 +37,7 @@ export const Home = (user) => {
 
 
     return(
+
         <PageContainer>
             <div className='mainContainer'>
                 {dataIMDB.map((dataIMDB)=>(
