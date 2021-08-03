@@ -22,3 +22,22 @@ export const fetchUsers = async (e, email, username, pass, setUser) =>{
     }
     
 }
+
+export const addMovie = async (username, title, year, image) =>{
+    try {
+        const response = await fetch(`http://localhost:5000/movies`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                title: title,
+                user: username,
+                year: year,
+                image: image
+            })
+        })
+        const data = await response.json()
+        console.log(data.message)
+    } catch (error) {
+        console.log(error)
+    }
+}
