@@ -32,8 +32,6 @@ export const Home = (user) => {
         return <h1>An error has occured: {error.error}</h1>
     } else {
         console.log(dataIMDB)
-        let movies = [...dataIMDB]
-        console.log(movies)
     }
 
 

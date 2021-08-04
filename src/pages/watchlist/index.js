@@ -1,13 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PageContainer } from "../../styledComponents"
+import { updateStatus, removeMovie } from '../../utils';
 
 export const Watchlist = (user) =>{
+const [watchlist, setWatchlist] = useState([]);
+const [error, setError] = useState({ error: false, message: "" });
+        useEffect(() => {
+            handleFetch();
+          }, []);
+let moviesArray;
+const changeStatus = (entry) =>{
+            if (entry == 'Not finished'){
+                entry = 'Finished'
+            } else { entry = 'Not finished'}
+        }
+
+    const handleFetch = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/movies/${user.user}`);
+            if (response.status !== 200) {
+                throw new error('Oops something went wrong')
+            } else if (response.status == 200) {
+                const data = await response.json();
+                setWatchlist(data.targetUser);
+                console.log(watchlist)
+            }
+        } catch (error) {
+            setError({error:true, message: error.message})
+        }
+    }
+    
+    if (error.error) {
+        return <h1>An error has occured: {error.error}</h1>
+    } else {
+        moviesArray = [...watchlist]
+        console.log(moviesArray)
+    }
 
 
     return(
         <PageContainer>
-            
+             <div className='mainContainer'>
+                {moviesArray.map((moviesArray, index)=>(
+                    <div className='movieBox' key={moviesArray.id}>
+                        {moviesArray.image && (
+                            <img className='thumbnail' src={moviesArray.image}/>
+                        )}
+                        <h3>{moviesArray.title}</h3>
+                        <p>{moviesArray.year}</p>
+                        <p>{moviesArray.watched}</p>
+                        <button type='button' onClick={()=>{changeStatus(moviesArray.watched)}} onClick={()=>{updateStatus(user.user, watchlist[index].title)}}>Movie is {moviesArray.watched}. To change this status, click here.</button>
+                        <button type='button' onClick={()=>{removeMovie(user.user, watchlist[index].title)}}>x</button>
+                    </div>
+                ))}
+            </div>
         </PageContainer>
     )
 }

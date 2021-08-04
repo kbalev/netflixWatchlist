@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Redirect, Link} from "react-router-dom";
 import styled from 'styled-components';
 import { Landing } from './pages/landing';
@@ -26,7 +26,7 @@ const[user, setUser] =useState();
       <Route path='/home'>
         <Home user={user}/>
       </Route>
-      <Route path='/watchlist'>
+      <Route path='/myMovieList'>
         <Watchlist user={user}/>
       </Route>
     

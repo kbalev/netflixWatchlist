@@ -41,3 +41,37 @@ export const addMovie = async (username, title, year, image) =>{
         console.log(error)
     }
 }
+
+export const updateStatus = async (username, title) =>{
+    try {
+        const response = await fetch(`http://localhost:5000/movies/`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                user: username,
+                title: title
+            })
+        })
+        const data = await response.json()
+        console.log(data.message)
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export const removeMovie = async(username, title) =>{
+    try {
+        const response = await fetch(`http://localhost:5000/movies`, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                user: username,
+                title: title
+            })
+        })
+        const data = await response.json()
+        console.log(data.message)
+    } catch (err) {
+        console.log(err)
+    }
+}
