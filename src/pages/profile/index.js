@@ -3,6 +3,7 @@ import { ProfileContainer } from "../../styledComponents";
 import React, {Component, useState, useEffect} from 'react';
 import { fetchUsers } from "../../utils";
 import { Redirect } from "react-router-dom";
+import { updateUsers } from "../../utils";
 import { updateStatus } from "../../utils";
 
 
@@ -55,7 +56,9 @@ export const Profile = ({user, setUser}) => {
         <ProfileContainer> 
             <div className="ProfileContainer">
               <h1> Account Details </h1>
+
                 {confirmPass ? <AccountForm>
+
                    <label>
                         Username:
                         <input type= "text" placeholder={username} username= {username}
@@ -72,6 +75,7 @@ export const Profile = ({user, setUser}) => {
                         <input type= "text" placeholder= {pass} password= {pass}
                         onChange= {e=> setPass(e.target.value)}/>
                      </label>
+
                      <button type='button' onClick={e=>{updateStatus(e, pass, email, username)}}> 
                         Add to Profile 
                     </button>

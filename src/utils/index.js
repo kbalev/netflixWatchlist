@@ -103,3 +103,31 @@ export const authUser = async (setUser) =>{
     }
     
 }
+
+export const updateUsers = async (e, email, pass, username, setEmail, setPass) => {
+    e.preventDefault();
+    try {
+      let response;
+      if (email) {
+        response = await fetch(`http://localhost:5000/users`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            password: pass,
+            email: email,
+            username: username,
+          }),
+        });
+      } else {
+        response = await fetch(`http://localhost:5000/users/${email}`);
+      }
+      const data = await response.json();
+      setEmail(data.updateUserEmail);
+      setPass(data.updateUserEmail);
+     
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
+
