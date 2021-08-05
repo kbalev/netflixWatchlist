@@ -13,7 +13,7 @@ export const Home = (user) => {
 
         const handleFetch = async () => {
             try {
-                const response = await fetch('https://imdb-api.com/en/API/Top250Movies/k_y87opzx8');
+                const response = await fetch('https://imdb-api.com/en/API/Top250Movies/k_gpqqs75l');
                 if (response.status !== 200) {
                     throw new error('Oops something went wrong')
                 } else if (response.status == 200) {
