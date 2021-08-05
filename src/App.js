@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router, Route, Redirect, Link} from "react-router-dom";
 import styled from 'styled-components';
 import { Landing } from './pages/landing';
@@ -6,14 +6,19 @@ import { Home } from './pages/home';
 import { Navbar } from "./components/navbar";
 import { Profile } from "./pages/profile";
 import { Watchlist } from "./pages/watchlist";
+import { authUser } from "./utils/index";
 
 
 const App = () =>  {
 const[user, setUser] =useState();
 
+useEffect(()=>{
+  authUser(setUser)
+}, [user])
+
   return (
     <AppContainer>
-      <Navbar/>
+      <Navbar setUser={setUser}/>
       
     
       {user ? <Redirect to= '/home'/> : <Redirect to = '/'/>}

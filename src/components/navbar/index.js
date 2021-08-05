@@ -10,7 +10,13 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import "./navbar.css";
 
 
-export const Navbar = () => {
+export const Navbar = ({setUser}) => {
+
+  const logOutHandler = (e) =>{
+    e.preventDefault();
+    localStorage.removeItem('MyToken')
+    setUser();
+  }
     return (
         // <NavbarContainer> 
  <nav className="nav-bar">
@@ -26,6 +32,10 @@ export const Navbar = () => {
           </li>
           <li>
             <Link to="/landing"><FontAwesomeIcon icon={faUser} /> LogIn And SignUp Page  </Link>
+          </li>
+          <li>
+            <button onClick={(e) =>logOutHandler(e)}>Logout</button>
+            {/* don't forget to pass the 'e' along the whole way for the re-renders to work as intended */}
           </li>
         </ul>
       </nav>
