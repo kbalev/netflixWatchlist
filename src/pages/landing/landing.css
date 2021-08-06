@@ -34,7 +34,7 @@ body{
 }
 .btn{
     max-width: 40%;
-    margin-left: 4vw;
+    margin-left: 4.5vw;
     margin-right: 4vw;
     margin-bottom: 3vh;
     min-height: 3vh;
@@ -47,7 +47,7 @@ body{
 }
 .btn-login{
         max-width: 57%;
-        margin-left: 4vw;
+        margin-left: 4.5vw;
         margin-right: 4vw;
         margin-bottom: 3vh;
         min-height: 3vh;
@@ -60,7 +60,7 @@ body{
 }
 .login-holder{
     max-width: 40vw;
-    max-height: 30vh;
+    max-height: 35vh;
     background-color: rgba(255, 0, 0, 0.596);
     justify-content: center;
     justify-items: center;
@@ -72,13 +72,17 @@ body{
     flex-wrap: wrap;
     animation: fadeIn;
     animation-duration: 2s;
-    
+    padding-right: 1vw;   
+    animation-duration: 2s;    
     }
 label{
     font-family: netflix;
     font-size: 1em;
     color: white;
     
+}
+.email{
+    margin-right: 1.4vw;
 }
 .overlay{
     background-color: rgba(0, 0, 0, 0.397);

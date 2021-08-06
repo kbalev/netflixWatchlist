@@ -16,11 +16,11 @@ export const Profile = ({user, setUser}) => {
     const [error, setError] = useState({ error: false, message: "" });
     
     useEffect(() => {
-        handleFetch();
+        handleFetch(user);
       }, [confirmPass]);
 
 
-    const handleFetch = async () => {
+    const handleFetch = async (user) => {
         let response
         try {
             response = await fetch(`http://localhost:5000/users/${user}`, {
@@ -61,7 +61,7 @@ export const Profile = ({user, setUser}) => {
 
                    <label>
                         Username:
-                        <input type= "text" placeholder={username} username= {username}
+                        <input type= "text" placeholder={user} username= {user}
                         onChange={e=> setUsername(e.target.value)} />
                     </label>
                    <label>

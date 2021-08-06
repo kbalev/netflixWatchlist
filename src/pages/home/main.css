@@ -15,6 +15,7 @@ body{
     max-height: auto;
     justify-content: space-around;
     }
+
 .movieBox{
    width: 15vw;
    height:45vh;
@@ -55,3 +56,4 @@ body{
     0%{ background-color: red; color: black;}
     100%{background-color: black; color: red}
 }
+
