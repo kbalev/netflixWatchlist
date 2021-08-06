@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { PageContainer} from '../../styledComponents';
 import { addMovie } from '../../utils';
+import './main.css';
 
 export const Home = (user) => {
         const [dataIMDB, setDataIMDB] = useState([])
@@ -13,7 +14,7 @@ export const Home = (user) => {
 
         const handleFetch = async () => {
             try {
-                const response = await fetch('https://imdb-api.com/en/API/Top250Movies/k_gpqqs751');
+                const response = await fetch('https://imdb-api.com/en/API/Top250Movies/k_ndigoj1k');
                 if (response.status !== 200) {
                     throw new error('Oops something went wrong')
                 } else if (response.status == 200) {

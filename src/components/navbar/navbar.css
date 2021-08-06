@@ -1,34 +1,39 @@
 .nav-bar {
-    background-color:white;
-    
+  background-color:black;
+  
 }
 
 .nav-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .nav-bar li {
-    width: 85px;
-    flex: 2;
-  }
+.nav-bar li {
+  width: 85px;
+  flex: 2;
+}
 
-  li {
-    color:white(214, 186, 186);
-    font-weight: 100;
-    letter-spacing: 2px;
-    text-decoration: none;
-    background:rgba(255, 0, 0, 0.2);
-    padding:20px 5px;
-    display: inline-block;
-    text-align: center;
-    transition:all 0.5s;
+li {
+  color:red;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-decoration: none;
+  
+  padding:20px 5px;
+  display: inline-block;
+  text-align: center;
+  transition:all 0.5s;
+  font-family: netflix;
 }
 
 li:hover {
-    background:rgba(0, 0, 0, 0.2);
-    transform:scale(1.2);
+  background:rgba(0, 0, 0, 0.2);
+  transform:scale(1.2);
+}
+.link-text{
+color: red;
+text-decoration: none;
 }
