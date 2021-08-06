@@ -50,8 +50,8 @@ const changeStatus = (entry) =>{
                         <h3>{watchlist.title}</h3>
                         <p>{watchlist.year}</p>
                         <p>{watchlist.watched}</p>
-                        <button type='button' onClick={()=>{changeStatus(watchlist.watched)}} onClick={()=>{updateStatus(user.user, watchlist.title)}}>Movie is {watchlist.watched}. To change this status, click here.</button>
-                        <button type='button' onClick={()=>{removeMovie(user.user, watchlist.title)}}>x</button>
+                        <button className='btn-card' type='button' onClick={()=>{changeStatus(watchlist.watched)}} onClick={()=>{updateStatus(user.user, watchlist.title)}}>Movie is {watchlist.watched}. To change this status, click here.</button>
+                        <button className='btn-card' type='button' onClick={()=>{removeMovie(user.user, watchlist.title)}}>x</button>
                     </div>
                 ))}
             </div>

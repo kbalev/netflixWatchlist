@@ -40,7 +40,7 @@ export const MovieBox = ({ title, addMovie, moviePoster }) => {
       <li>
         <span>{moviePoster}</span>
         <p>{title}</p>
-        <button onClick={addMovie}>Add Movie to your watchlist</button>
+        <button type='button' onClick={addMovie}>Add Movie to your watchlist</button>
       </li>
     </StyledContainer>
   );
