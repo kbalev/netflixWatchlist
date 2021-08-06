@@ -1,3 +1,12 @@
+body{
+    background-image: url(/src/images/clapper.jpeg);
+    background-position: absolute ;
+    background-repeat: no-repeat !important;
+    object-fit: stretch;
+    overflow-x: hidden;
+    margin: 0%;
+ 
+ }
 .mainContainer{
     display: flex;
     flex-direction: row;
@@ -5,7 +14,8 @@
     max-width: 100vw;
     max-height: auto;
     justify-content: space-around;
-}
+    }
+
 .movieBox{
    width: 15vw;
    height:45vh;
@@ -46,5 +56,4 @@
     0%{ background-color: red; color: black;}
     100%{background-color: black; color: red}
 }
-
 

@@ -8,7 +8,7 @@ li{
 }
 
 button{
-  border: solid 1px gray;
+  border: solid 1px red;
   width: 70px;
   height: 50px;
   transition: linear 0.3s;

@@ -40,6 +40,7 @@ export const Home = (user) => {
 
         <PageContainer>
             <div className='mainContainer'>
+               
                 {dataIMDB.map((dataIMDB)=>(
                     <div className='movieBox' key={dataIMDB.id}>
                         {dataIMDB.image && (
@@ -47,11 +48,11 @@ export const Home = (user) => {
                         )}
                         <h3>{dataIMDB.title}</h3>
                         <p>{dataIMDB.year}</p>
-                        <button type='button' onClick={()=>{addMovie(user.user,dataIMDB.title, dataIMDB.year, dataIMDB.image)}}>Add {dataIMDB.title} to watchlist</button>
+                        <button className="btn-card" onClick={()=>{addMovie(user.user,dataIMDB.title, dataIMDB.year, dataIMDB.image)}}>Add {dataIMDB.title} to watchlist</button>
                     </div>
                 ))}
             </div>
+            
         </PageContainer>
     )
 }
-
