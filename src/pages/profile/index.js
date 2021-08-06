@@ -82,8 +82,8 @@ export const Profile = ({user, setUser}) => {
 
                </AccountForm> :
                <AccountForm>
-                   <input type= 'text' placeholder='Please confirm password to proceed'/>
-                   <button type='button' onClick={(e)=>setPass(e)} onClick={()=>{setConfirmPass(true)}}>Submit</button>
+                   <input type='text' placeholder='Please confirm password to proceed' value={pass} onChange={e=>setPass(e.target.value)}/>
+                   <button type='button' onClick={()=>{setConfirmPass(true)}}>Submit</button>
                </AccountForm>}
             </div>
         </ProfileContainer>
