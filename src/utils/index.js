@@ -69,7 +69,7 @@ export const updateStatus = async (username, title) =>{
 
 export const removeMovie = async(username, title) =>{
     try {
-        const response = await fetch(`http://localhost:5000/movies`, {
+        const response = await fetch(`http://localhost:5000/movies/`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

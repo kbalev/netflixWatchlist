@@ -42,16 +42,16 @@ const changeStatus = (entry) =>{
     return(
         <PageContainer>
              <div className='mainContainer'>
-                {moviesArray.map((moviesArray, index)=>(
-                    <div className='movieBox' key={moviesArray.id}>
-                        {moviesArray.image && (
-                            <img className='thumbnail' src={moviesArray.image}/>
+                {watchlist.map((watchlist)=>(
+                    <div className='movieBox' key={watchlist.id}>
+                        {watchlist.image && (
+                            <img className='thumbnail' src={watchlist.image}/>
                         )}
-                        <h3>{moviesArray.title}</h3>
-                        <p>{moviesArray.year}</p>
-                        <p>{moviesArray.watched}</p>
-                        <button type='button' onClick={()=>{changeStatus(moviesArray.watched)}} onClick={()=>{updateStatus(user.user, watchlist[index].title)}}>Movie is {moviesArray.watched}. To change this status, click here.</button>
-                        <button type='button' onClick={()=>{removeMovie(user.user, watchlist[index].title)}}>x</button>
+                        <h3>{watchlist.title}</h3>
+                        <p>{watchlist.year}</p>
+                        <p>{watchlist.watched}</p>
+                        <button type='button' onClick={()=>{changeStatus(watchlist.watched)}} onClick={()=>{updateStatus(user.user, watchlist.title)}}>Movie is {watchlist.watched}. To change this status, click here.</button>
+                        <button type='button' onClick={()=>{removeMovie(user.user, watchlist.title)}}>x</button>
                     </div>
                 ))}
             </div>
