@@ -24,12 +24,8 @@ const [pass, setPass] = useState();
             <LogForm onSubmit={(e) => fetchUsers(e, email, username, pass, setUser)}>
                 {newUser && <LogInput className="login-input" onChange={(e) => setEmail(e.target.value)} placeholder='Email'/>}
                
-                <label>username: 
-                <LogInput className="login-input" onChange={(e) => setUsername(e.target.value)} placeholder='Username'/>
-                </label>
-                <label>Password:
+                <LogInput className="login-input" onChange={(e) => setUsername(e.target.value)} placeholder='Username'/>  
                 <LogInput className="login-input" onChange={(e) => setPass(e.target.value)} placeholder='Password'/>
-                </label>
                 <LogButton className="btn-login"type='submit'>{newUser ? 'Sign Up' : 'Log In'}</LogButton>
             </LogForm>
             <LogButton className="btn" type='button' onClick={()=> setNewUser(!newUser)}>{newUser ? 'Log In' : 'Sign Up'}</LogButton>
