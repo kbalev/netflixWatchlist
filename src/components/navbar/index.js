@@ -30,11 +30,9 @@ export const Navbar = ({setUser}) => {
           <li>
             <Link to="/profile"><FontAwesomeIcon icon={faUserCircle} /> Account Details </Link>
           </li>
+          
           <li>
-            <Link to="/landing"><FontAwesomeIcon icon={faUser} /> LogIn And SignUp Page  </Link>
-          </li>
-          <li>
-            <button onClick={(e) =>logOutHandler(e)}>Logout</button>
+            <button className="btn-logout" onClick={(e) =>logOutHandler(e)}>Logout</button>
             {/* don't forget to pass the 'e' along the whole way for the re-renders to work as intended */}
           </li>
         </ul>

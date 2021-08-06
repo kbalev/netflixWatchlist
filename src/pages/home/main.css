@@ -1,0 +1,57 @@
+body{
+    background-image: url(/src/images/clapper.jpeg);
+    background-position: absolute ;
+    background-repeat: no-repeat !important;
+    object-fit: stretch;
+    overflow-x: hidden;
+    margin: 0%;
+ 
+ }
+.mainContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    max-height: auto;
+    justify-content: space-around;
+    }
+.movieBox{
+   width: 15vw;
+   height:45vh;
+   margin: 5vh 5vh 5vh 5vh;
+   background-color: rgba(0, 0, 0, 0.625);
+   box-shadow: rgba(212, 13, 13, 0.45) 0px 25px 20px -20px;
+   padding: 2vh 1vw 1vh 1vw;
+   border-radius: 2vh 2vh 2vh 2vh;
+   justify-content: center;
+   color: red;
+   text-align: center;
+}
+.thumbnail{
+    max-width: 60%;
+    max-height: 60%;  
+}
+.btn-card{
+    background-color: red;
+    height: 4vh;
+    min-width: 10vw;
+    border-radius: 2vh 2vh 2vh 2vh;
+    font-family: netflix;
+    border: none;  
+}
+.banner{
+    font-family: netflix;
+    font-size: 3em;
+    color: red;
+    text-align: center;
+}
+.btn-card:hover{
+    animation: buttonAnimate, ease;
+    animation-duration: 2s;
+}
+
+/* keyframes */
+@keyframes buttonAnimate {
+    0%{ background-color: red; color: black;}
+    100%{background-color: black; color: red}
+}
