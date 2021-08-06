@@ -26,8 +26,7 @@ useEffect(()=>{
         <Landing setUser ={setUser}/>
       </Route>
       <Route path='/profile'>
-        <Profile/>
-        <Profile setUser ={setUser} user={user}/>
+        <Profile setUser={setUser} user={user}/>
       </Route>
       <Route path='/home'>
         <Home user={user}/>
